@@ -1,0 +1,46 @@
+
+body{
+    background-color: rgb(169, 126, 209);
+}
+
+header h1{
+    color: white;
+}
+
+.flex-outer{
+    max-width: 800px;
+    padding: 0px 16px;
+}
+.flex-outer li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex-outer li label, .flex-outer li p{
+    flex: 1 0 125px;
+    max-width: 225px;
+    padding: 8px;
+}
+.flex-outer > li > label + * {
+    flex: 1 0 225px;
+}
+.flex-outer > li > button {
+    padding: 6px 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+}
+.flex-inner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 0 225px; 
+}
+.flex-inner li{
+    width: 80px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
