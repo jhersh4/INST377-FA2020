@@ -1,12 +1,17 @@
-const FruitLabel = document.querySelector('#checkbox-list-label');
+const fruitlabel = document.querySelector('#checkbox-list-label');
 
 const btn = document.querySelector('button2');
 
-function random(number) {
-  return Math.floor(Math.random() * (number + 1));
+const fruits = ['banana', 'apple', 'kiwi', 'lime'];
+
+const checkboxes = array(document.querySelectorAll('#flex-inner li'));
+
+function checkiteration(FruitList, i) {
+  document.checkboxes[i].textContent = FruitList[i];
+  return checkboxes;
 }
-  
-btn.onclick = function() {
-  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-  document.body.style.backgroundColor = rndCol;
-}
+
+btn.onclick = function buttonfunction() {
+  fruits.forEach(checkiteration(fruits, i));
+  fruitlabel.textContent = 'Fruits';
+};

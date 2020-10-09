@@ -53,17 +53,22 @@
                 </li>
                 <li>
                     <button class="button" name="button" type="submit" id="button">Submit Form</button>
-                    <button class="button2" name="button" type="button" id="button2" onclick="Event">Activate</button>
+                    <button class="button2" name="button" type="button" id="button2" onclick="testFunction()">Activate</button>
                 </li>
             </ul>
         </form>
-        <script src="/main.js"></script>
-        <script> function testFunction() {
-            fetch('/api')
-            .then((response) => response.text())
-            .then((response) => {
-                 console.log(response);
-            })
-       }</script>
+        <script> 
+        function testFunction() {
+          fetch('/api')
+          .then((response) => response.text())
+          .then((response) => {
+          console.log(response);
+          document.body.style.backgroundColor = "lightblue";
+          document.querySelector('title').innerHTML = response;
+          document.querySelector('h1').innerHTML = response;
+          document.querySelector('.flex-outer').style.margin = 'auto 0';
+          })
+        }
+       </script>
     </body>
 </html>
