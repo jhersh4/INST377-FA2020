@@ -66,7 +66,12 @@
           document.body.style.backgroundColor = "lightblue";
           document.querySelector('title').innerHTML = response;
           document.querySelector('h1').innerHTML = response;
-          document.querySelector('.flex-outer').style.margin = 'auto 0';
+          const fruits = ['banana', 'apple', 'kiwi', 'lime'];
+          const checkboxes = document.querySelectorAll('.flex-inner label');
+          checkboxes.forEach(((checkbox, i) => {
+              checkbox.innerText = fruits[i]
+              checkbox.for = fruits[1]
+          }))
           })
         }
        </script>
