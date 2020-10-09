@@ -68,12 +68,13 @@
           document.querySelector('h1').innerHTML = response;
           const fruits = ['banana', 'apple', 'kiwi', 'lime'];
           const checkboxes = document.querySelectorAll('.flex-inner label');
+          document.querySelector('.checkbox-list-label').innerHTML = 'Fruits';
           checkboxes.forEach(((checkbox, i) => {
-              checkbox.innerText = fruits[i]
-              checkbox.for = fruits[1]
-          }))
+              checkbox.innerText = fruits[i];
+          }));
+          document.querySelector('.flex-outer').style.margin = '0 auto';
           })
-        }
+        };
        </script>
     </body>
 </html>
