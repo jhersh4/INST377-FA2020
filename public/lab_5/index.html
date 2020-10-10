@@ -1,0 +1,80 @@
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Josh Hershberger's lab 4</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Josh Hershberger's lab 4</h1>
+        </div>
+        <form action= "/api" method="post">
+            <ul class="flex-outer">
+                <li>
+                    <label for="fname">First Name</label>
+                    <input name="first name" type="text" id="fname">
+                </li>
+                <li>
+                    <label for="lname">Last Name</label>
+                    <input name="last name" type="text" id="lname">
+                </li>
+                <li>
+                    <label for="email">Email Address</label>
+                    <input name="email" type="email" id="email">
+                </li>
+                <li>
+                    <label for="phone">Phone Number</label>
+                    <input name="phone" type="tel" id="phone">
+                </li>
+                <li>
+                    <label for="message">Text field</label>
+                    <textarea name="message" rows="5" cols = "33" id="message" placeholder="Enter your message here"></textarea>
+                </li>
+                <li>
+                    <p class="checkbox-list-label">Age</p>
+                    <ul class="flex-inner">
+                        <li>
+                            <input name="Age 18-35" type="checkbox" id="eighteen-to-thirtyfive">
+                            <label class="label" for="eighteen-to-thirtyfive">18-35</label>
+                        </li>
+                        <li>
+                            <input name="Age 36-50" type="checkbox" id="thirtysix-to-fifty">
+                            <label class="label" for="thirtysix-to-fifty">36-50</label>
+                        </li>
+                        <li>
+                            <input  name="Age 51-65" type="checkbox" id="fiftyone-to-sixtyfive">
+                            <label class="label" for="fiftyone-to-sixtyfive">51-65</label>
+                        </li>
+                        <li>
+                            <input  name="Age outside 18-65" type="checkbox" id="other">
+                            <label class="label" for="other">other</label>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="button" name="button" type="submit" id="button">Submit Form</button>
+                    <button class="button2" name="button" type="button" id="button2" onclick="testFunction()">Activate</button>
+                </li>
+            </ul>
+        </form>
+        <script> 
+        function testFunction() {
+          fetch('/api')
+          .then((response) => response.text())
+          .then((response) => {
+          console.log(response);
+          document.body.style.backgroundColor = "lightblue";
+          document.querySelector('title').innerHTML = response;
+          document.querySelector('h1').innerHTML = response;
+          const fruits = ['banana', 'apple', 'kiwi', 'lime'];
+          const checkboxes = document.querySelectorAll('.flex-inner label');
+          document.querySelector('.checkbox-list-label').innerHTML = 'Fruits';
+          checkboxes.forEach(((checkbox, i) => {
+              checkbox.innerText = fruits[i];
+          }));
+          document.querySelector('.flex-outer').style.margin = '0 auto';
+          })
+        };
+       </script>
+    </body>
+</html>

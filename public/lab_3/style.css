@@ -59,7 +59,7 @@ p, li {
 }
 
 body > * {
-  background-color: lightblue;
+  background-color: rgb(173, 228, 230);
   padding: 1%;
 }
 
