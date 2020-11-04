@@ -1,21 +1,21 @@
 function convertRestaurantsToCategories(restaurantList) {
   const category1 = [];
   const resultsobj = {};
-  for (let n = 0; n < restaurantList.length; n += 1) {
+  for (let i = 0; i < restaurantList.length; i += 1) {
     category1.push(restaurantList[i].category);
   }
 
-  for (let n = 0; n < category1.length; n += 1) {
-    if (!resultsobj[category1[n]]) {
-      resultsobj[category1[n]] = 0;
+  for (let i = 0; i < category1.length; i += 1) {
+    if (!resultsobj[category1[i]]) {
+      resultsobj[category1[i]] = 0;
     }
 
-    resultsobj[category1[n]] += 1;
+    resultsobj[category1[i]] += 1;
   }
 
   const list = Object.keys(resultsobj).map((category) => ({
     y: resultsobj[category], label: category
-  }));  
+  }));
   return list;
 }
 
@@ -31,14 +31,14 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
     '#F5A52A',
     '#23BFAA',
     '#FAA586',
-    '#EB8CC6',
+    '#EB8CC6'
   ]);
 
   return {
     animationEnabled: true,
     colorSet: 'customColorSet1',
     title: {
-      text: 'Change This Title'
+      text: 'Places To Eat Out In Future'
     },
     axisX: {
       interval: 1,
@@ -47,25 +47,25 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
     axisY2: {
       interlacedColor: 'rgba(1,77,101,.2)',
       gridColor: 'rgba(1,77,101,.1)',
-      title: 'Change This Title',
+      title: 'Restaurants by Category',
       labelFontSize: 12,
       scaleBreaks: {
         customBreaks: [
           {
-            startValue: 30,
-            endValue: 40,
+            startValue: 40,
+            endValue: 50,
             color: 'purple'
           },
 
           {
-            startValue: 75,
-            endValue: 90,
+            startValue: 85,
+            endValue: 100,
             color: 'purple'
           },
 
           {
-            startValue: 130,
-            endValue: 165,
+            startValue: 140,
+            endValue: 175,
             color: 'purple'
           }
         ]
