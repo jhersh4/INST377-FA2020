@@ -4,7 +4,7 @@ function convertRestaurantsToCategories(restaurantList) {
   for (let n = 0; n < restaurantList.length; n += 1) {
     category1.push(restaurantList[i].category);
   }
-  
+
   for (let n = 0; n < category1.length; n += 1) {
     if (!resultsobj[category1[n]]) {
       resultsobj[category1[n]] = 0;
@@ -15,7 +15,8 @@ function convertRestaurantsToCategories(restaurantList) {
 
   const list = Object.keys(resultsobj).map((category) => ({
     y: resultsobj[category], label: category
-  }));  return list;
+  }));  
+  return list;
 }
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
@@ -49,25 +50,26 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
       title: 'Change This Title',
       labelFontSize: 12,
       scaleBreaks: {
-          customBreaks: [
-            {
-              startValue: 30,
-              endValue: 40,
-              color: 'purple'
-            },
+        customBreaks: [
+          {
+            startValue: 30,
+            endValue: 40,
+            color: 'purple'
+          },
 
-            {
-              startValue: 75,
-              endValue: 90,
-              color: 'purple'
-            },
+          {
+            startValue: 75,
+            endValue: 90,
+            color: 'purple'
+          },
 
-            {
-              startValue: 130,
-              endValue: 165,
-              color: 'purple'
-            }
-      ]
+          {
+            startValue: 130,
+            endValue: 165,
+            color: 'purple'
+          }
+        ]
+      }
     },
     data: [{
       type: 'bar',
